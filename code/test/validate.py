@@ -29,7 +29,10 @@ BOLD = '\033[1m'
 UNDERLINE = '\033[4m'
 
 # Create a Metrics object
-metrics = StockMetrics(r"C:\Users\neves\Downloads\bank-activity-lab\bank-activity-lab\data\raw\amzn.csv")
+
+file_path = os.path.join("data", "raw", "amzn.csv")
+
+metrics = StockMetrics(file_path)
 
 
 def pt1():
