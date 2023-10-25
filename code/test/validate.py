@@ -20,7 +20,7 @@ The terminal output will tell you if your pipeline is successful.
 """
 import sys
 
-from StockMetrics import StockMetrics
+from code.StockMetrics import StockMetrics
 
 OKGREEN = '\033[92m'
 FAIL = '\033[91m'
