@@ -20,6 +20,8 @@ The terminal output will tell you if your pipeline is successful.
 """
 import sys
 
+import os
+
 from code.StockMetrics import StockMetrics
 
 OKGREEN = '\033[92m'

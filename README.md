@@ -13,4 +13,4 @@ The purpose of this project is to continue a pipeline in Python to analyse stock
 * Jupyter
 
 ## Project Description
-Our current sample dataset contains 9 weeks of Amazon stock prices. We currently are able to create classes that can measure the mean, median and standart deviation of the stock prices to predict its ups and downs in prices. Once those statistics were analyzed for the stock we can trace the week in which the prices were most affected and in the future we can analyse the price difference according to the news headlines.
+Our current sample dataset contains 9 weeks of Amazon stock prices. We currently are able to create classes that can measure the mean, median and standart deviation of the stock prices. Due to the first columns of the rows being dates, the StockMetrics code skips the first columns. For the sake of accuracy we also skip the empty values in rows. Once values are transformed into floats we make required caculations for each class and store the final values into a list. At last, we can trace the week in which the prices were most affected through the comparison of the standard deviation with median and mean of prices. 

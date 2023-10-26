@@ -13,7 +13,7 @@ class StockMetrics(StockData):
         # list of lists
         self.load()
     
-
+    #this function checks if a value can be transformed into a float or not and will be used to skip date values on the rows
     def valid_float(self, val):
         
         try:
@@ -21,17 +21,16 @@ class StockMetrics(StockData):
             return True
         except ValueError:
             return False
-        
-        
+  
+  
     def average01(self):
         
         averages = []
 
         for row in self.data:
-            new_vals = [float(price) for price in row if self.valid_float(price)]
-            if new_vals:
-                row_avg = round(stats.mean(new_vals), 3)
-                averages.append(row_avg)
+            new_vals = [float(i) for i in row if self.valid_float(i) and self != ""]
+            row_avg = round(stats.mean(new_vals), 3)
+            averages.append(row_avg)
 
         return averages
 
@@ -42,10 +41,9 @@ class StockMetrics(StockData):
         median = []
 
         for row in self.data:
-            new_vals = [float(price) for price in row if self.valid_float(price)]
-            if new_vals:
-                row_med = stats.median(new_vals)
-                median.append(row_med)
+            new_vals = [float(i) for i in row if self.valid_float(i) and self != ""]
+            row_med = stats.median(new_vals)
+            median.append(row_med)
 
         return median
 
@@ -55,10 +53,9 @@ class StockMetrics(StockData):
         stdev = []
         
         for row in self.data:
-            new_vals = [float(price) for price in row if self.valid_float(price)]
-            if new_vals:
-                row_stdev = round(stats.stdev(new_vals), 3)
-                stdev.append(row_stdev)
+            new_vals = [float(i) for i in row if self.valid_float(i) and self != ""]
+            row_stdev = round(stats.stdev(new_vals), 3)
+            stdev.append(row_stdev)
                 
         return stdev
                 
