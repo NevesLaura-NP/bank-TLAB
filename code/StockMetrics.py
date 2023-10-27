@@ -1,7 +1,7 @@
 
 import statistics as stats
 
-from code.StockData import StockData
+from StockData import StockData
 
 
 class StockMetrics(StockData):
@@ -34,15 +34,21 @@ class StockMetrics(StockData):
 
         return averages
 
-
+#this code represents a less elegant look into a possible code with for loops 
     def median02(self):
         """pt2
         """
         median = []
 
         for row in self.data:
-            new_vals = [float(i) for i in row if self.valid_float(i) and self != ""]
-            row_med = stats.median(new_vals)
+            row_i = []
+            for i in row[1:]:
+                try:
+                    i = float(i)
+                    row_i.append(i)
+                except ValueError: 
+                    continue       
+            row_med = stats.median(row_i)
             median.append(row_med)
 
         return median

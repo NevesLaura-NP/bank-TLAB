@@ -22,7 +22,7 @@ import sys
 
 import os
 
-from code.StockMetrics import StockMetrics
+from StockMetrics import StockMetrics
 
 OKGREEN = '\033[92m'
 FAIL = '\033[91m'
@@ -34,7 +34,7 @@ UNDERLINE = '\033[4m'
 
 file_path = os.path.join("data", "raw", "amzn.csv")
 
-metrics = StockMetrics(file_path)
+metrics = StockMetrics(r"C:\Users\neves\OneDrive\Documents\TKH1\bank-TLAB\data\raw\amzn.csv")
 
 
 def pt1():
